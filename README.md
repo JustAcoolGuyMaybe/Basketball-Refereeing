@@ -22,10 +22,16 @@ Professional mobile-first **FIBA Basketball Referee Handbook**, Rule Violation G
 
 ## 🚀 Deployment Options
 
-### 1. Direct Export from AI Studio
-1. In the AI Studio interface, click on the **Settings/Export** menu.
-2. Select **Export to GitHub** or **Download ZIP**.
-3. Push to your GitHub repository.
+### 1. GitHub Pages Automated Deployment (Recommended for Frontend)
+
+This repository includes a pre-configured GitHub Action (`.github/workflows/deploy.yml`) that automatically builds the Vite TypeScript application into production JavaScript and deploys it.
+
+**How to enable GitHub Pages without MIME type errors:**
+1. In your GitHub repository, go to **Settings** -> **Pages**.
+2. Under **Build and deployment** -> **Source**, change the dropdown from `"Deploy from a branch"` to **`GitHub Actions`**.
+3. Push a commit or go to **Actions** -> **Deploy to GitHub Pages** -> click **Run workflow**.
+
+> 💡 *Note: The MIME type `application/octet-stream` error occurs when GitHub Pages is set to "Deploy from a branch" (root folder) because raw `.tsx` files are served without being compiled. Selecting **GitHub Actions** compiles the project into production `.js` bundles (`dist/`) before publishing.*
 
 ### 2. Full-Stack Deployment (Cloud Run, Vercel, Railway, Render, Fly.io)
 
