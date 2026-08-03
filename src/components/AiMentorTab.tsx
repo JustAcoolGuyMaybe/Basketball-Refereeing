@@ -48,6 +48,10 @@ export function AiMentorTab() {
         })
       });
 
+      if (res.status === 404) {
+        throw new Error('The AI backend endpoint (/api/chat) is not available on static hosting (e.g. GitHub Pages). To enable live AI answers, run the app with the Node.js backend server or Cloud Run container.');
+      }
+
       const data = await res.json();
       if (!res.ok) {
         throw new Error(data.error || 'Failed to get response from AI assistant');
