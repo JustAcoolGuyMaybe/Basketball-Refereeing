@@ -1,0 +1,7 @@
+{
+  "name": "FIBA Referee Pro",
+  "description": "Professional FIBA basketball refereeing handbook, rule violations guide, signal visualizer, and AI referee mentor.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
+
